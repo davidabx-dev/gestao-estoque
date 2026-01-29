@@ -1,0 +1,7 @@
+POST http://localhost:8000/products
+Content-Type: application/json
+
+{
+    "name": "Teclado Mecanico",
+    "price": 300.0
+}

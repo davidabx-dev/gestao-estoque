@@ -1,0 +1,9 @@
+# Ignora o banco de dados local (cada dev tem o seu)
+*.db
+
+# Ignora executáveis gerados
+server
+*.exe
+
+# Ignora pastas de IDE
+.vscode/
