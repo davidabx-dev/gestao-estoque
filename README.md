@@ -34,18 +34,17 @@ Dockerfile     # Configuração de container otimizada
 
 ---
 
-### ⚙️ Como Executar
+## ⚙️ Como Executar
 
-**Opção 1: Via Docker (Recomendado)**
-
+### Opção 1: Via Docker (Recomendado)
 A aplicação utiliza **Multistage Build**, gerando um container final extremamente leve.
 
 ```bash
 # 1. Construir a imagem
 docker build -t gestao-estoque .
 
-# 2. Rodar o container
-docker run -p 8080:8080 gestao-estoque
+# 2. Rodar o container (Mapeando porta 8000)
+docker run -p 8000:8000 gestao-estoque
 ```
 
 ---
@@ -54,7 +53,7 @@ docker run -p 8080:8080 gestao-estoque
 
 ```bash
 go mod tidy
-go run cmd/main.go
+go run cmd/server/main.go
 ```
 
 ---
@@ -72,7 +71,7 @@ curl http://localhost:8080/health
 **Criar Produto (Exemplo)**
 
 ```bash
-curl -X POST http://localhost:8080/product \
+curl -X POST http://localhost:8000/products \
    -H "Content-Type: application/json" \
    -d '{"name": "Teclado Mecânico", "price": 150.00}'
 ```
